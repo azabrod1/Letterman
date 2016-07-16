@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49E35C711D3A84DC003114BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E35C701D3A84DC003114BE /* AppDelegate.swift */; };
+		49E35C731D3A84DC003114BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E35C721D3A84DC003114BE /* ViewController.swift */; };
+		49E35C761D3A84DC003114BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E35C741D3A84DC003114BE /* Main.storyboard */; };
+		49E35C781D3A84DC003114BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E35C771D3A84DC003114BE /* Assets.xcassets */; };
+		49E35C7B1D3A84DC003114BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E35C791D3A84DC003114BE /* LaunchScreen.storyboard */; };
+		49E35C861D3A84DC003114BE /* LettermanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E35C851D3A84DC003114BE /* LettermanTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49E35C821D3A84DC003114BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49E35C651D3A84DC003114BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49E35C6C1D3A84DC003114BE;
+			remoteInfo = Letterman;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49E35C6D1D3A84DC003114BE /* Letterman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Letterman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E35C701D3A84DC003114BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49E35C721D3A84DC003114BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49E35C751D3A84DC003114BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49E35C771D3A84DC003114BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49E35C7A1D3A84DC003114BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49E35C7C1D3A84DC003114BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E35C811D3A84DC003114BE /* LettermanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LettermanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E35C851D3A84DC003114BE /* LettermanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettermanTests.swift; sourceTree = "<group>"; };
+		49E35C871D3A84DC003114BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49E35C6A1D3A84DC003114BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E35C7E1D3A84DC003114BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49E35C641D3A84DC003114BE = {
+			isa = PBXGroup;
+			children = (
+				49E35C6F1D3A84DC003114BE /* Letterman */,
+				49E35C841D3A84DC003114BE /* LettermanTests */,
+				49E35C6E1D3A84DC003114BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49E35C6E1D3A84DC003114BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49E35C6D1D3A84DC003114BE /* Letterman.app */,
+				49E35C811D3A84DC003114BE /* LettermanTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49E35C6F1D3A84DC003114BE /* Letterman */ = {
+			isa = PBXGroup;
+			children = (
+				49E35C701D3A84DC003114BE /* AppDelegate.swift */,
+				49E35C721D3A84DC003114BE /* ViewController.swift */,
+				49E35C741D3A84DC003114BE /* Main.storyboard */,
+				49E35C771D3A84DC003114BE /* Assets.xcassets */,
+				49E35C791D3A84DC003114BE /* LaunchScreen.storyboard */,
+				49E35C7C1D3A84DC003114BE /* Info.plist */,
+			);
+			path = Letterman;
+			sourceTree = "<group>";
+		};
+		49E35C841D3A84DC003114BE /* LettermanTests */ = {
+			isa = PBXGroup;
+			children = (
+				49E35C851D3A84DC003114BE /* LettermanTests.swift */,
+				49E35C871D3A84DC003114BE /* Info.plist */,
+			);
+			path = LettermanTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49E35C6C1D3A84DC003114BE /* Letterman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49E35C8A1D3A84DC003114BE /* Build configuration list for PBXNativeTarget "Letterman" */;
+			buildPhases = (
+				49E35C691D3A84DC003114BE /* Sources */,
+				49E35C6A1D3A84DC003114BE /* Frameworks */,
+				49E35C6B1D3A84DC003114BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Letterman;
+			productName = Letterman;
+			productReference = 49E35C6D1D3A84DC003114BE /* Letterman.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49E35C801D3A84DC003114BE /* LettermanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49E35C8D1D3A84DC003114BE /* Build configuration list for PBXNativeTarget "LettermanTests" */;
+			buildPhases = (
+				49E35C7D1D3A84DC003114BE /* Sources */,
+				49E35C7E1D3A84DC003114BE /* Frameworks */,
+				49E35C7F1D3A84DC003114BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49E35C831D3A84DC003114BE /* PBXTargetDependency */,
+			);
+			name = LettermanTests;
+			productName = LettermanTests;
+			productReference = 49E35C811D3A84DC003114BE /* LettermanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49E35C651D3A84DC003114BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Alex Zabrodskiy";
+				TargetAttributes = {
+					49E35C6C1D3A84DC003114BE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					49E35C801D3A84DC003114BE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 49E35C6C1D3A84DC003114BE;
+					};
+				};
+			};
+			buildConfigurationList = 49E35C681D3A84DC003114BE /* Build configuration list for PBXProject "Letterman" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49E35C641D3A84DC003114BE;
+			productRefGroup = 49E35C6E1D3A84DC003114BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49E35C6C1D3A84DC003114BE /* Letterman */,
+				49E35C801D3A84DC003114BE /* LettermanTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49E35C6B1D3A84DC003114BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49E35C7B1D3A84DC003114BE /* LaunchScreen.storyboard in Resources */,
+				49E35C781D3A84DC003114BE /* Assets.xcassets in Resources */,
+				49E35C761D3A84DC003114BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E35C7F1D3A84DC003114BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49E35C691D3A84DC003114BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49E35C731D3A84DC003114BE /* ViewController.swift in Sources */,
+				49E35C711D3A84DC003114BE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49E35C7D1D3A84DC003114BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49E35C861D3A84DC003114BE /* LettermanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49E35C831D3A84DC003114BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49E35C6C1D3A84DC003114BE /* Letterman */;
+			targetProxy = 49E35C821D3A84DC003114BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49E35C741D3A84DC003114BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49E35C751D3A84DC003114BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49E35C791D3A84DC003114BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49E35C7A1D3A84DC003114BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49E35C881D3A84DC003114BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49E35C891D3A84DC003114BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49E35C8B1D3A84DC003114BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Letterman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.Letterman";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49E35C8C1D3A84DC003114BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Letterman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.Letterman";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		49E35C8E1D3A84DC003114BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LettermanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.LettermanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Letterman.app/Letterman";
+			};
+			name = Debug;
+		};
+		49E35C8F1D3A84DC003114BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LettermanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.LettermanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Letterman.app/Letterman";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49E35C681D3A84DC003114BE /* Build configuration list for PBXProject "Letterman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E35C881D3A84DC003114BE /* Debug */,
+				49E35C891D3A84DC003114BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49E35C8A1D3A84DC003114BE /* Build configuration list for PBXNativeTarget "Letterman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E35C8B1D3A84DC003114BE /* Debug */,
+				49E35C8C1D3A84DC003114BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		49E35C8D1D3A84DC003114BE /* Build configuration list for PBXNativeTarget "LettermanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E35C8E1D3A84DC003114BE /* Debug */,
+				49E35C8F1D3A84DC003114BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49E35C651D3A84DC003114BE /* Project object */;
+}
