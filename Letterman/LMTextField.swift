@@ -15,7 +15,7 @@ class LMTextField: UITextField {
     override func deleteBackward() {
         super.deleteBackward()
         
-        myDelegate.handleBackspace(self.tag)
+        myDelegate.handleBackspace(tag: self.tag)
         
     }
     

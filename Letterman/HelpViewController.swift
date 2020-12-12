@@ -18,8 +18,8 @@ class HelpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttonClose.backgroundColor = UIColor.redColor()
-        buttonClose.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        buttonClose.backgroundColor = UIColor.red
+        buttonClose.setTitleColor(UIColor.white, for: UIControl.State.normal)
         buttonClose.layer.cornerRadius = 0.5 * buttonClose.bounds.size.height
         textView.layer.cornerRadius = 0.1 * textView.bounds.size.width
         
@@ -39,20 +39,18 @@ class HelpViewController: UIViewController {
         super.viewDidLayoutSubviews()
         textView.setContentOffset(CGPoint.zero, animated: false)
     }
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+    override var prefersStatusBarHidden: Bool {get {return true}}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonPressed( sender: UIButton) {
+    @IBAction func buttonPressed(_ sender: UIButton) {
         
-        MainController.playSound("click", ext: "mp3")
+        MainController.playSound(name:"click", ext: "mp3")
         
-        self.dismissViewControllerAnimated(true, completion: {});
+        self.dismiss(animated:true, completion: {});
         
     }
 

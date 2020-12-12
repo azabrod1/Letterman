@@ -3,10 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3743D49C258551340018C522 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3743D493258551340018C522 /* win.mp3 */; };
+		3743D49D258551340018C522 /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3743D494258551340018C522 /* lose.mp3 */; };
+		3743D49E258551340018C522 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3743D495258551340018C522 /* OptionsViewController.swift */; };
+		3743D49F258551340018C522 /* LMBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3743D496258551340018C522 /* LMBoard.swift */; };
+		3743D4A0258551340018C522 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3743D497258551340018C522 /* words.txt */; };
+		3743D4A1258551340018C522 /* LMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3743D498258551340018C522 /* LMTextField.swift */; };
+		3743D4A2258551340018C522 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3743D499258551340018C522 /* spark.png */; };
+		3743D4A4258551340018C522 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3743D49B258551340018C522 /* MainController.swift */; };
+		3743D4B2258562550018C522 /* background_bubbles.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3743D4B1258562550018C522 /* background_bubbles.jpeg */; };
+		3743D4BC258562AB0018C522 /* hard.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3743D4B5258562AB0018C522 /* hard.txt */; };
+		3743D4BD258562AB0018C522 /* firework.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3743D4B6258562AB0018C522 /* firework.sks */; };
+		3743D4BE258562AB0018C522 /* Firework_red.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3743D4B7258562AB0018C522 /* Firework_red.sks */; };
+		3743D4BF258562AB0018C522 /* HallOfTheMountainKing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3743D4B8258562AB0018C522 /* HallOfTheMountainKing.mp3 */; };
+		3743D4C0258562AB0018C522 /* download (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 3743D4B9258562AB0018C522 /* download (1).png */; };
+		3743D4C1258562AB0018C522 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3743D4BA258562AB0018C522 /* HelpViewController.swift */; };
+		3743D4C2258562AB0018C522 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3743D4BB258562AB0018C522 /* click.mp3 */; };
 		49E35C711D3A84DC003114BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E35C701D3A84DC003114BE /* AppDelegate.swift */; };
 		49E35C731D3A84DC003114BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E35C721D3A84DC003114BE /* ViewController.swift */; };
 		49E35C761D3A84DC003114BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E35C741D3A84DC003114BE /* Main.storyboard */; };
@@ -26,6 +42,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3743D493258551340018C522 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
+		3743D494258551340018C522 /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		3743D495258551340018C522 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		3743D496258551340018C522 /* LMBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMBoard.swift; sourceTree = "<group>"; };
+		3743D497258551340018C522 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		3743D498258551340018C522 /* LMTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTextField.swift; sourceTree = "<group>"; };
+		3743D499258551340018C522 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		3743D49B258551340018C522 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		3743D4B1258562550018C522 /* background_bubbles.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_bubbles.jpeg; sourceTree = "<group>"; };
+		3743D4B5258562AB0018C522 /* hard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hard.txt; sourceTree = "<group>"; };
+		3743D4B6258562AB0018C522 /* firework.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = firework.sks; sourceTree = "<group>"; };
+		3743D4B7258562AB0018C522 /* Firework_red.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Firework_red.sks; sourceTree = "<group>"; };
+		3743D4B8258562AB0018C522 /* HallOfTheMountainKing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HallOfTheMountainKing.mp3; sourceTree = "<group>"; };
+		3743D4B9258562AB0018C522 /* download (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "download (1).png"; sourceTree = "<group>"; };
+		3743D4BA258562AB0018C522 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		3743D4BB258562AB0018C522 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		49E35C6D1D3A84DC003114BE /* Letterman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Letterman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E35C701D3A84DC003114BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E35C721D3A84DC003114BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +109,22 @@
 		49E35C6F1D3A84DC003114BE /* Letterman */ = {
 			isa = PBXGroup;
 			children = (
+				3743D4BB258562AB0018C522 /* click.mp3 */,
+				3743D4B9258562AB0018C522 /* download (1).png */,
+				3743D4B7258562AB0018C522 /* Firework_red.sks */,
+				3743D4B6258562AB0018C522 /* firework.sks */,
+				3743D4B8258562AB0018C522 /* HallOfTheMountainKing.mp3 */,
+				3743D4B5258562AB0018C522 /* hard.txt */,
+				3743D4BA258562AB0018C522 /* HelpViewController.swift */,
+				3743D4B1258562550018C522 /* background_bubbles.jpeg */,
+				3743D496258551340018C522 /* LMBoard.swift */,
+				3743D498258551340018C522 /* LMTextField.swift */,
+				3743D494258551340018C522 /* lose.mp3 */,
+				3743D49B258551340018C522 /* MainController.swift */,
+				3743D495258551340018C522 /* OptionsViewController.swift */,
+				3743D499258551340018C522 /* spark.png */,
+				3743D493258551340018C522 /* win.mp3 */,
+				3743D497258551340018C522 /* words.txt */,
 				49E35C701D3A84DC003114BE /* AppDelegate.swift */,
 				49E35C721D3A84DC003114BE /* ViewController.swift */,
 				49E35C741D3A84DC003114BE /* Main.storyboard */,
@@ -141,7 +189,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Alex Zabrodskiy";
 				TargetAttributes = {
 					49E35C6C1D3A84DC003114BE = {
@@ -154,8 +202,8 @@
 				};
 			};
 			buildConfigurationList = 49E35C681D3A84DC003114BE /* Build configuration list for PBXProject "Letterman" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -177,9 +225,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3743D4BE258562AB0018C522 /* Firework_red.sks in Resources */,
 				49E35C7B1D3A84DC003114BE /* LaunchScreen.storyboard in Resources */,
+				3743D4B2258562550018C522 /* background_bubbles.jpeg in Resources */,
+				3743D4BD258562AB0018C522 /* firework.sks in Resources */,
+				3743D49D258551340018C522 /* lose.mp3 in Resources */,
 				49E35C781D3A84DC003114BE /* Assets.xcassets in Resources */,
+				3743D4C0258562AB0018C522 /* download (1).png in Resources */,
+				3743D4C2258562AB0018C522 /* click.mp3 in Resources */,
+				3743D4BF258562AB0018C522 /* HallOfTheMountainKing.mp3 in Resources */,
+				3743D4A2258551340018C522 /* spark.png in Resources */,
 				49E35C761D3A84DC003114BE /* Main.storyboard in Resources */,
+				3743D4A0258551340018C522 /* words.txt in Resources */,
+				3743D4BC258562AB0018C522 /* hard.txt in Resources */,
+				3743D49C258551340018C522 /* win.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3743D4C1258562AB0018C522 /* HelpViewController.swift in Sources */,
+				3743D49E258551340018C522 /* OptionsViewController.swift in Sources */,
+				3743D49F258551340018C522 /* LMBoard.swift in Sources */,
 				49E35C731D3A84DC003114BE /* ViewController.swift in Sources */,
 				49E35C711D3A84DC003114BE /* AppDelegate.swift in Sources */,
+				3743D4A4258551340018C522 /* MainController.swift in Sources */,
+				3743D4A1258551340018C522 /* LMTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,13 +313,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -277,11 +352,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -295,13 +371,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -317,9 +404,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -330,7 +419,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Letterman/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.Letterman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -341,7 +433,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Letterman/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.Letterman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -352,7 +447,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = LettermanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.LettermanTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Letterman.app/Letterman";
@@ -364,7 +463,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = LettermanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.LettermanTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Letterman.app/Letterman";
@@ -390,6 +493,7 @@
 				49E35C8C1D3A84DC003114BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49E35C8D1D3A84DC003114BE /* Build configuration list for PBXNativeTarget "LettermanTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +502,7 @@
 				49E35C8F1D3A84DC003114BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

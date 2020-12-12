@@ -18,101 +18,64 @@ class MainController: UIViewController, UITextFieldDelegate {
     var round = 0
     static var player: AVAudioPlayer?
     
-    
-    static let defaults = NSUserDefaults.standardUserDefaults()
-    
+    static let defaults = UserDefaults.standard
     
     let letterNormalColor =  UIColor(red: 12.0/255, green: 118.0/255, blue: 240.0/255, alpha: 1.0)
-    let letterWinColor = UIColor.whiteColor()
-    let letterLoseColor = UIColor.whiteColor()
-    let numberColor = UIColor.whiteColor()
+    let letterWinColor = UIColor.white
+    let letterLoseColor = UIColor.white
+    let numberColor = UIColor.white
     let colorPlate = [UIColor( red:  0.564 , green: 0.764, blue:0.9519, alpha: 0.7 ) , UIColor( red:  0.564 , green: 0.88235, blue:0.882, alpha: 0.7 ),  UIColor( red:  0.564 , green: 0.8824, blue:0.7059, alpha: 0.7 ), UIColor( red:  0.564 , green: 0.8824, blue:0.4705, alpha: 0.7 ), UIColor( red:  0.733 , green: 0.8824, blue:0.3529, alpha: 0.7 ) , UIColor( red:  0.8824 , green: 0.8824, blue:0.3829, alpha: 0.7 ),  UIColor( red:  0.9019 , green: 0.8078, blue:0.1960, alpha: 0.85 ),  UIColor( red:  0.9019 , green: 0.63137, blue:0.1960, alpha: 0.85 ) , UIColor( red:  0.9019 , green: 0.39215, blue:0.1960, alpha: 0.85 ), UIColor( red:  0.8019 , green: 0.1960, blue:0.25, alpha: 0.85 ) ]
-    
     
     // MARK : member variables
     
-    
-    
     private var grid = [[UITextField]]()
-    
     private let letterCnt = 5
     private let totalCols = 7
+
     var board: LMBoard = LMBoard()!
-
-
     var buttonGo = UIButton()
     
-    
     @IBOutlet weak var imageHeader: UIImageView!
-   
-    
     @IBOutlet weak var toolBar: UIToolbar!
+
     // MARK: init
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    required init?(coder aDecoder: NSCoder) {super.init(coder: aDecoder)}
     
-
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    
+    override var prefersStatusBarHidden: Bool {get {return true}}
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        
-        
         createBoard()
         resetBoard()
         updateBoard()
-        
-        
         //toolBar.tintColor = UIColor.blue.withAlphaComponent(0.3)
-        
         //create buttons for toolbar
         
         let playButton = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
-        
         ///let barSeperator = UIBarButtonItem.
-        
         let optionButton = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
         
         let helpButton = UIButton(frame: CGRect(x: 0, y: 0, width: 34, height: 34))
         
-        let horizontalSeperator: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-
-        
-        
-
-        
+        let horizontalSeperator: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         //set images for buttons
-        playButton.setImage(UIImage(named: "play.png"), forState: UIControlState.Normal)
+        playButton.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
         
-        helpButton.setImage(UIImage(named: "help.png"), forState: UIControlState.Normal)
+        helpButton.setImage(UIImage(named: "help.png"), for: UIControl.State.normal)
         
-        optionButton.setImage(UIImage(named: "options.png"), forState: UIControlState.Normal)
+        optionButton.setImage(UIImage(named: "options.png"), for: UIControl.State.normal)
         
-
-        
-
         //set frame
         
         let barButtons = [UIBarButtonItem(customView: playButton), horizontalSeperator, UIBarButtonItem(customView: optionButton),  UIBarButtonItem(customView: helpButton)]
 
-
         //Add actions to toolbar buttons
         
-        
-        playButton.addTarget(self, action: #selector(startButtonPressed), forControlEvents: UIControlEvents.TouchDown)
-        
-        optionButton.addTarget(self, action: #selector(optionButtonPressed), forControlEvents: UIControlEvents.TouchDown)
- 
-        helpButton.addTarget(self, action: #selector(helpButtonPressed), forControlEvents: UIControlEvents.TouchDown)
+        playButton.addTarget(self, action: #selector(startButtonPressed), for: UIControl.Event.touchDown)
+        optionButton.addTarget(self, action: #selector(optionButtonPressed), for: UIControl.Event.touchDown)
+        helpButton.addTarget(self, action: #selector(helpButtonPressed), for: UIControl.Event.touchDown)
         
         
         toolBar.items = barButtons
@@ -125,12 +88,12 @@ class MainController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         // move the button next to guess word - for some reason does not work in viewDidLoad()
         
         
@@ -165,15 +128,11 @@ class MainController: UIViewController, UITextFieldDelegate {
         frameHeight -= imageHeader.frame.height
         frameHeight -= toolBar.frame.height
         
-        
         if (frameWidth > frameHeight){
-           
-            let temp = frameWidth
-            
-            frameWidth = frameHeight
-            frameHeight = temp
-            
-            
+            swap(&frameHeight, &frameWidth)
+            //let temp = frameWidth
+            //frameWidth = frameHeight
+            //frameHeight = temp
         }
         
         
@@ -206,63 +165,57 @@ class MainController: UIViewController, UITextFieldDelegate {
                 
                 if (c == 0 ){
                     
-                    char.borderStyle = UITextBorderStyle.None
-                    char.backgroundColor = UIColor.clearColor()
+                    char.borderStyle = UITextField.BorderStyle.none
+                    char.backgroundColor = UIColor.clear
                     char.textColor = numberColor
                     char.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
-                    char.textAlignment = .Justified
-                    char.userInteractionEnabled = false
+                    char.textAlignment = .justified
+                    char.isUserInteractionEnabled = false
 
                 }
                 else if (c == 6){
                     
-                    char.borderStyle = UITextBorderStyle.None
-                    char.backgroundColor = UIColor.clearColor()
+                    char.borderStyle = UITextField.BorderStyle.none
+                    char.backgroundColor = UIColor.clear
                     char.textColor = numberColor
                     char.font = UIFont(name: "Optima-ExtraBlack", size: 18)
-                    char.textAlignment = .Left
-                    char.userInteractionEnabled = false
+                    char.textAlignment = .left
+                    char.isUserInteractionEnabled = false
                 }
                     
                 else {
                     
-                    char.borderStyle = UITextBorderStyle.RoundedRect
+                    char.borderStyle = UITextField.BorderStyle.roundedRect
                     char.backgroundColor = colorPlate[0]
                     char.textColor = letterNormalColor
-                    char.layer.borderColor = colorPlate[0].CGColor
+                    char.layer.borderColor = colorPlate[0].cgColor
                     
                     char.font = UIFont(name: "Optima-ExtraBlack", size: 18)
                     
                     char.layer.cornerRadius = 0.35 * char.bounds.size.width
-                    char.textAlignment = .Center
-                    char.userInteractionEnabled = (r == 0) // enable editing for the 0 row
+                    char.textAlignment = .center
+                    char.isUserInteractionEnabled = (r == 0) // enable editing for the 0 row
                 }
                 
                 
                 char.adjustsFontSizeToFitWidth = true
-                char.minimumFontSize = 8
+                char.minimumFontSize = 18 //___ 8
                 //char.autocapitalizationType = .AllCharacters
                 
-                char.textAlignment = .Center
-                char.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+                char.textAlignment = .center
+                char.autocapitalizationType = UITextAutocapitalizationType.allCharacters
                 
                 word += [char]
                 self.view.addSubview(char)
                 
                 char.delegate = self
-                
-                
-                
                 //char.addTarget(self, action: #selector(editingChange(_:)), for: UIControlEvents.editingChanged)
-                
-                
-                
             }
             grid += [word]
         }
         
         // permanenty hide the counter for the first row
-        grid[0][6].hidden = true
+        grid[0][6].isHidden = true
         // create a button instead
         
         let x = grid[0][6].frame.minX + xDistance  //xStart + 6 * (textSize + xDistance)
@@ -270,27 +223,22 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         buttonGo = UIButton (frame: CGRect(x: x, y: y, width: textSize, height: textSize))
         
-        buttonGo.setTitle("Go", forState: UIControlState.Normal)
-        buttonGo.backgroundColor = UIColor.redColor()
-        buttonGo.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        buttonGo.setTitle("Go", for: UIControl.State.normal)
+        buttonGo.backgroundColor = UIColor.red
+        buttonGo.setTitleColor(UIColor.white, for: UIControl.State.normal)
         buttonGo.layer.cornerRadius = 0.5 * buttonGo.bounds.size.width
-        buttonGo.addTarget(self, action: #selector(buttonPressed), forControlEvents: .TouchUpInside)
+        buttonGo.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         //buttonGo font = UIFont(name: "Optima-ExtraBlack", size: 18)!
         self.view.addSubview(buttonGo)
-        
         
         // tag the first row (for firstresponder pass)
         for c in 1...5{
             (grid[0][c]).tag = c
         }
-
         // make sure elements are visible
         
-        self.view.bringSubviewToFront( imageHeader)
-        self.view.bringSubviewToFront( toolBar)
-        
-        
-        
+        self.view.bringSubviewToFront(imageHeader)
+        self.view.bringSubviewToFront(toolBar)
     }
     
     // this function is executed at the beginning of each game
@@ -306,15 +254,15 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         //print(imageHeader.image)
         
-        grid[0][0].hidden = false
+        grid[0][0].isHidden = false
         grid[0][0].text = "1"
-        buttonGo.hidden = false
-        buttonGo.enabled = true
+        buttonGo.isHidden = false
+        buttonGo.isEnabled = true
         
         
         // set the first row
         for i in 1...5{
-            (grid[0][i]).userInteractionEnabled = true
+            (grid[0][i]).isUserInteractionEnabled = true
             (grid[0][i]).text = ""
             (grid[0][i]).textColor = letterNormalColor
             (grid[0][i]).backgroundColor = colorPlate[0]
@@ -323,7 +271,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         // hide all the rows except first
         for r in 1...board.getTotalTries(){
             for c in 0...6{
-                (grid[r][c]).hidden = true
+                (grid[r][c]).isHidden = true
             }
         }
         
@@ -339,40 +287,43 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         let guesses = board.getGuessedWords()
         round = guesses.count
-        colorTiles(board)
+        colorTiles(board: board)
 
         
         if(board.isWon()) {
             
             let secretWord = board.getSecredWord()
             
-            MainController.playSound("win", ext: "mp3")
+            MainController.playSound(name: "win", ext: "mp3")
             
             for c in 1...5{
-                (grid[0][c]).text = String(secretWord[secretWord.startIndex.advancedBy(c-1)])
+                (grid[0][c]).text = String(secretWord[secretWord.index(secretWord
+                                    .startIndex, offsetBy: c-1)])
+                                                      
+                                                      //startIndex.advancedBy(c-1)])
                     
                     //[secretWord.characters.indexOf(secretWord.startIndex, offsetBy: c-1)]) //Reveal secret word
                 
-                (grid[0][c]).backgroundColor = UIColor.blueColor()
+                (grid[0][c]).backgroundColor = UIColor.blue
                 (grid[0][c]).textColor =  letterWinColor
-                (grid[0][c]).userInteractionEnabled = false
+                (grid[0][c]).isUserInteractionEnabled = false
             }
 
             imageHeader.image = UIImage(named: "Victory")
             
-            buttonGo.hidden = true
+            buttonGo.isHidden = true
             
             
-            var result = MainController.defaults.integerForKey ("GamesWon")
+            var result = MainController.defaults.integer (forKey: "GamesWon")
             result += 1
-            MainController.defaults.setInteger(result, forKey: "GamesWon")
+            MainController.defaults.set(result, forKey: "GamesWon")
             
             if(board.getTries() < 8){
                 //print("under 8")
                 
-                var result = MainController.defaults.integerForKey("Under8")
+                var result = MainController.defaults.integer(forKey: "Under8")
                 result += 1
-                MainController.defaults.setInteger(result, forKey: "Under8")
+                MainController.defaults.set(result, forKey: "Under8")
                 
             }
             
@@ -382,34 +333,36 @@ class MainController: UIViewController, UITextFieldDelegate {
             
         else if(board.isOver()){
             
-            MainController.playSound("lose", ext: "mp3")
+            MainController.playSound(name: "lose", ext: "mp3")
             
             let secretWord = board.getSecredWord()
             for c in 1...5{
-                (grid[0][c]).text = String(secretWord[secretWord.startIndex.advancedBy(c-1)])
+                (grid[0][c]).text = String(secretWord[secretWord.index(secretWord.startIndex, offsetBy: c-1)])
+                                                        
+                                                        //.startIndex.advancedBy(c-1)])
                     
                     //secretWord.characters.indexOf(secretWord.startIndex, offsetBy: c-1)]) //Reveal secret word
-                (grid[0][c]).backgroundColor = UIColor.darkGrayColor()
+                (grid[0][c]).backgroundColor = UIColor.darkGray
                 (grid[0][c]).textColor =  letterLoseColor
-                (grid[0][c]).userInteractionEnabled = false
+                (grid[0][c]).isUserInteractionEnabled = false
             }
             
             let guesses = board.getGuessedWords()
             // populate prior guesses
             for r in 0..<round{
                 let word = guesses[round - r - 1]
-                let chars = Array(word.characters)
+                let chars = Array(word)
                 
-                (grid[r+1][0]).hidden = false
+                (grid[r+1][0]).isHidden = false
                 (grid[r+1][0]).text = "\(round-r )"
                 
                 for c in 0...4{
                     (grid[r+1][c+1]).text = String(chars[c])
-                    (grid[r+1][c+1]).hidden = false
+                    (grid[r+1][c+1]).isHidden = false
                     
                 }
-                (grid[r+1][6]).hidden = false
-                let (np, nc) = board.findMatches(word)
+                (grid[r+1][6]).isHidden = false
+                let (np, nc) = board.findMatches(word: word)
                 (grid[r+1][6]).text = "\(np)/\(nc)"
                 
             }
@@ -417,7 +370,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             
             imageHeader.image = UIImage(named: "Defeat")
             
-            buttonGo.hidden = true
+            buttonGo.isHidden = true
             grid[0][0].text = "x"
             
             
@@ -425,7 +378,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         }
         else{
             if (round > 0){
-                MainController.playSound("click", ext: "mp3")
+                MainController.playSound(name: "click", ext: "mp3")
             }
             
             // populate first row
@@ -441,21 +394,21 @@ class MainController: UIViewController, UITextFieldDelegate {
             for r in 0..<round{
                 
                 let word = guesses[round - r - 1]
-                let chars = Array(word.characters)
+                let chars = Array(word)
                 
-                (grid[r+1][0]).hidden = false
+                (grid[r+1][0]).isHidden = false
                 (grid[r+1][0]).text = "\(round-r )"
                 
                 
                 for c in 0...4{
                     (grid[r+1][c+1]).text = String(chars[c])
-                    (grid[r+1][c+1]).hidden = false
+                    (grid[r+1][c+1]).isHidden = false
                     
                 }
                 
                 
-                (grid[r+1][6]).hidden = false
-                let (np, nc) = board.findMatches(word)
+                (grid[r+1][6]).isHidden = false
+                let (np, nc) = board.findMatches(word: word)
                 (grid[r+1][6]).text = "\(np)/\(nc)"
                 
             }
@@ -487,7 +440,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             
             word += char!
         }
-        _ = board.addWord(word)
+        _ = board.addWord(word: word)
         
         updateBoard()
  
@@ -524,14 +477,15 @@ class MainController: UIViewController, UITextFieldDelegate {
     func handleBackspace(tag: Int){
         
         
-        if ((grid[0][tag].text?.characters.count)! > 0){
+        if ((grid[0][tag].text?.count)! > 0){
             grid[0][tag].text = ""
         }
             
         if (tag > 0){
             (grid[0][tag-1]).becomeFirstResponder()
             
-            (grid[0][tag-1]).selectedTextRange  = (grid[0][tag-1]).textRangeFromPosition((grid[0][tag-1]).beginningOfDocument, toPosition: (grid[0][tag-1]).beginningOfDocument)
+            (grid[0][tag-1]).selectedTextRange  = (grid[0][tag-1]).textRange(from:(grid[0][tag-1]).beginningOfDocument,
+                                        to: (grid[0][tag-1]).beginningOfDocument)
                 
                 
                 
@@ -551,19 +505,20 @@ class MainController: UIViewController, UITextFieldDelegate {
     
    
         
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) ->Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) ->Bool {
         
         
-        print("+\(string)+  \(string.characters.count)")
+        print("+\(string)+  \(string.count)")
         
-        if (string.characters.count > 0){
-            textField.text = String(string.characters.first!)
+        if (string.count > 0){
+            
+            textField.text = String(string.first!)
         
         
-            if (textField.tag < 5 && (grid[0][textField.tag].text?.characters.count)! > 0){
+            if (textField.tag < 5 && (grid[0][textField.tag].text?.count)! > 0){
                 (grid[0][textField.tag+1]).becomeFirstResponder()
             
-                (grid[0][textField.tag+1]).selectedTextRange = (grid[0][textField.tag+1]).textRangeFromPosition( (grid[0][textField.tag+1]).beginningOfDocument, toPosition: (grid[0][textField.tag+1]).beginningOfDocument)
+                (grid[0][textField.tag+1]).selectedTextRange = (grid[0][textField.tag+1]).textRange(from: (grid[0][textField.tag+1]).beginningOfDocument, to: (grid[0][textField.tag+1]).beginningOfDocument)
             
             
                 //.setContentOffset(CGPointZero, animated: false)
@@ -571,7 +526,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             }
         } else {
             
-            let wasEmpty = (textField.text?.characters.count == 0)
+            let wasEmpty = (textField.text?.count == 0)
             
             textField.text = ""
             
@@ -579,7 +534,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             if (textField.tag > 0){
                 (grid[0][textField.tag-1]).becomeFirstResponder()
                 
-                (grid[0][textField.tag-1]).selectedTextRange = (grid[0][textField.tag-1]).textRangeFromPosition((grid[0][textField.tag-1]).beginningOfDocument, toPosition: (grid[0][textField.tag-1]).beginningOfDocument)
+                (grid[0][textField.tag-1]).selectedTextRange = (grid[0][textField.tag-1]).textRange(from:(grid[0][textField.tag-1]).beginningOfDocument, to: (grid[0][textField.tag-1]).beginningOfDocument)
                 
                 if (wasEmpty){
                     (grid[0][textField.tag-1]).text = ""
@@ -629,7 +584,7 @@ class MainController: UIViewController, UITextFieldDelegate {
  */
  
     
-    func buttonPressed( sender: UIButton){
+    @objc func buttonPressed( sender: UIButton){
         addWord()
     }
     
@@ -637,41 +592,34 @@ class MainController: UIViewController, UITextFieldDelegate {
     // MARK : control actions
 
     
-    func startButtonPressed( sender: UIBarButtonItem) {
-        
-        MainController.playSound("click", ext: "mp3")
+    @objc func startButtonPressed(_ sender: UIBarButtonItem) {
+        MainController.playSound(name: "click", ext: "mp3")
         resetBoard()
-        
     }
     
-    func optionButtonPressed( sender: UIBarButtonItem){
-        
-        MainController.playSound("click", ext: "mp3")
+    @objc func optionButtonPressed(_ sender: UIBarButtonItem){
+        MainController.playSound(name: "click", ext: "mp3")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier( "OptionsViewController")
+        let vc = storyboard.instantiateViewController( withIdentifier: "OptionsViewController")
+        
+        //let optionsVC = OptionsViewController
+        //instantiateFromStoryboard(self.storyboard!)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @objc func helpButtonPressed(_ sender: UIBarButtonItem){
+        
+        MainController.playSound(name: "click", ext: "mp3")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HelpViewController")
         
         
         //let optionsVC = OptionsViewController
         //instantiateFromStoryboard(self.storyboard!)
         
         
-        self.presentViewController(vc, animated: true, completion: nil)
-        
-    }
-    
-    
-    func helpButtonPressed( sender: UIBarButtonItem){
-        
-        MainController.playSound("click", ext: "mp3")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("HelpViewController")
-        
-        
-        //let optionsVC = OptionsViewController
-        //instantiateFromStoryboard(self.storyboard!)
-        
-        
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -684,15 +632,15 @@ class MainController: UIViewController, UITextFieldDelegate {
     static func playSound( name : String, ext : String) {
         
         
-        if (defaults.boolForKey("SilentMode")){
+        if (defaults.bool(forKey: "SilentMode")){
             return
         }
         
         
-        let url = NSBundle.mainBundle().URLForResource( name, withExtension: ext)!
+        let url :URL = Bundle.main.url(forResource: name, withExtension:ext)!
         
         do {
-            player = try AVAudioPlayer(contentsOfURL: url)
+            player = try AVAudioPlayer(contentsOf: url)
             guard let player = player else { return }
             
             player.prepareToPlay()

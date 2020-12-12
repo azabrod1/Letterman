@@ -11,7 +11,7 @@ import Foundation
 
 class LMBoard {
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     private var secretWord : String = ""
     private var guessedWords : [String] = []
@@ -28,7 +28,7 @@ class LMBoard {
     required init?()
         
     {
-        wordDifficulty = defaults.integerForKey("WordDifficulty")
+        wordDifficulty = defaults.integer(forKey: "WordDifficulty")
         
         loadSecretWords()
         
@@ -89,7 +89,7 @@ class LMBoard {
     func chooseSecretWord() {
         
         
-        let currentWordDifficulty = defaults.integerForKey("WordDifficulty")
+        let currentWordDifficulty = defaults.integer(forKey: "WordDifficulty")
         
         if (currentWordDifficulty != wordDifficulty){
             
@@ -118,7 +118,7 @@ class LMBoard {
         guessedWords += [word]
         tries += 1
         
-        let (mp, mc) = findMatches(word)
+        let (mp, mc) = findMatches(word: word)
         
         if (mp == 5 && mc == 5){
             matchFound = true
@@ -135,9 +135,9 @@ class LMBoard {
     
     {
     
-        let wordCharacters = Array(word.characters)
+        let wordCharacters = Array(word)
         
-        let secretCharacters = Array (secretWord.characters)
+        let secretCharacters = Array (secretWord)
         
         
         var mc : Int = 0
@@ -195,11 +195,11 @@ class LMBoard {
     
         var fileLocation : String
         
-        if (defaults.integerForKey("WordDifficulty") == 0) { // normal
-            fileLocation = NSBundle.mainBundle().pathForResource( "words", ofType: "txt")!
+        if (defaults.integer(forKey: "WordDifficulty") == 0) { // normal
+            fileLocation = Bundle.main.path( forResource: "words", ofType: "txt")!
         }
         else { // hard
-            fileLocation = NSBundle.mainBundle().pathForResource( "hard", ofType: "txt")!
+            fileLocation = Bundle.main.path( forResource: "hard", ofType: "txt")!
         }
         let text : String
     
@@ -214,7 +214,7 @@ class LMBoard {
     
     
     
-        allSecretWords = text.componentsSeparatedByString("\n")
+        allSecretWords = text.components(separatedBy: "\n")
     
         return
     

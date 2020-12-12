@@ -30,48 +30,48 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var buttonSaveNew: UIButton!
     @IBOutlet weak var buttonCancelNew: UIButton!
     
-   let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     
-    @IBAction func saveButtonPressed( sender: UIButton) {
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
         
         
         
-        defaults.setInteger(controlWordDifficulty.selectedSegmentIndex, forKey: "WordDifficulty")
+        defaults.set(controlWordDifficulty.selectedSegmentIndex, forKey: "WordDifficulty")
         
-        defaults.setBool(controlSound.on, forKey: "SilentMode")
+        defaults.set(controlSound.isOn, forKey: "SilentMode")
         
         
-        MainController.playSound("click", ext: "mp3")
+        MainController.playSound(name: "click", ext: "mp3")
         
-        self.dismissViewControllerAnimated(true, completion: {});
+        self.dismiss(animated: true, completion: {});
         
     }
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
     
-    @IBAction func cancelButtonNewPressed( sender: UIButton) {
+    override var prefersStatusBarHidden: Bool {get {return true}}
+
+    
+    @IBAction func cancelButtonNewPressed(_ sender: UIButton) {
         
-        MainController.playSound("click", ext: "mp3")
+        MainController.playSound(name: "click", ext: "mp3")
         
-        self.dismissViewControllerAnimated(true, completion: {});
+        self.dismiss(animated: true, completion: {});
 
     }
   
     
     
-    @IBAction func resetButtonPressed(sender: UIButton) {
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
     
-        MainController.playSound("click", ext: "mp3")
+        MainController.playSound(name: "click", ext: "mp3")
         
-        defaults.setInteger(0, forKey: "GamesWon")
-        defaults.setInteger(0, forKey: "Under8")
-        var result = defaults.integerForKey("GamesWon")
+        defaults.set(0, forKey: "GamesWon")
+        defaults.set(0, forKey: "Under8")
+        var result = defaults.integer(forKey: "GamesWon")
         
         labelGamesWon.text = "Games won: \(result)"
         
-        result  = defaults.integerForKey("Under8")
+        result  = defaults.integer(forKey: "Under8")
         
         labelUnder8.text = "Games won under 8: \(result)"
         
@@ -81,21 +81,21 @@ class OptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controlWordDifficulty.selectedSegmentIndex = defaults.integerForKey("WordDifficulty")
+        controlWordDifficulty.selectedSegmentIndex = defaults.integer(forKey: "WordDifficulty")
         
-        controlSound.setOn(defaults.boolForKey("SilentMode"), animated: true)
+        controlSound.setOn(defaults.bool(forKey: "SilentMode"), animated: true)
         
-        var result = defaults.integerForKey("GamesWon")
+        var result = defaults.integer(forKey: "GamesWon")
         
         labelGamesWon.text = "Games won: \(result)"
         
-        result  = defaults.integerForKey( "Under8")
+        result  = defaults.integer( forKey: "Under8")
         
         labelUnder8.text = "Games won under 8: \(result)"
 
         
      
-        buttonCancelNew.layer.backgroundColor = UIColor.redColor().CGColor
+        buttonCancelNew.layer.backgroundColor = UIColor.red.cgColor
         
         //buttonCancelNew.backgroundColor = UIColor.red
         //buttonCancelNew.setTitleColor(UIColor.white, for: .normal)
@@ -116,14 +116,14 @@ class OptionsViewController: UIViewController {
         //self.view.bringSubview(toFront: viewStats)
         
         viewStats.layer.borderWidth = 2
-        viewStats.layer.borderColor = UIColor.redColor().CGColor
+        viewStats.layer.borderColor = UIColor.red.cgColor
         viewStats.layer.cornerRadius = 0.1 * viewStats.bounds.size.height
         
         
         //self.view.bringSubview(toFront: viewOptions)
         
         viewOptions.layer.borderWidth = 2
-        viewOptions.layer.borderColor = UIColor.redColor().CGColor
+        viewOptions.layer.borderColor = UIColor.red.cgColor
         viewOptions.layer.cornerRadius = 0.1 * viewOptions.bounds.size.height
         
         
