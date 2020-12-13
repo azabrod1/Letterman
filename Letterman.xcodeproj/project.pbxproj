@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37380F662586865700EC95D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3743D493258551340018C522 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 		3743D494258551340018C522 /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
 		3743D495258551340018C522 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +191,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 1220;
-				ORGANIZATIONNAME = "Alex Zabrodskiy";
+				ORGANIZATIONNAME = "Alex and Greg Zabrodskiy";
 				TargetAttributes = {
 					49E35C6C1D3A84DC003114BE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -289,6 +290,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				49E35C751D3A84DC003114BE /* Base */,
+				37380F662586865700EC95D2 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -423,6 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.Letterman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -437,6 +440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.Letterman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

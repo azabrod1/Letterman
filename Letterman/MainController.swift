@@ -50,9 +50,24 @@ class MainController: UIViewController, UITextFieldDelegate {
         createBoard()
         resetBoard()
         updateBoard()
+
         //toolBar.tintColor = UIColor.blue.withAlphaComponent(0.3)
         //create buttons for toolbar
+        let startBarButton = UIBarButtonItem(image: UIImage(named: "play.png"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(startButtonPressed))
         
+        let optionBarButton = UIBarButtonItem(image: UIImage(named: "options.png"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(optionButtonPressed))
+        
+        let helpBarButton = UIBarButtonItem(image: UIImage(named: "help.png"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(helpButtonPressed))
+        
+        let horizontalSeparator: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+        // don't understand why setting image does not work in above
+        startBarButton.setBackgroundImage(UIImage(named: "play.png"), for: UIControl.State.normal, barMetrics: UIBarMetrics.default)
+        optionBarButton.setBackgroundImage(UIImage(named: "options.png"), for: UIControl.State.normal, barMetrics: UIBarMetrics.default)
+        helpBarButton.setBackgroundImage(UIImage(named: "help.png"), for: UIControl.State.normal, barMetrics: UIBarMetrics.default)
+            
+        let barButtons = [startBarButton, horizontalSeparator,
+                          helpBarButton, optionBarButton]
+       /*
         let playButton = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
         ///let barSeperator = UIBarButtonItem.
         let optionButton = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
@@ -76,7 +91,8 @@ class MainController: UIViewController, UITextFieldDelegate {
         playButton.addTarget(self, action: #selector(startButtonPressed), for: UIControl.Event.touchDown)
         optionButton.addTarget(self, action: #selector(optionButtonPressed), for: UIControl.Event.touchDown)
         helpButton.addTarget(self, action: #selector(helpButtonPressed), for: UIControl.Event.touchDown)
-        
+        */
+        //self.toolbarItems = barButtons
         
         toolBar.items = barButtons
         
