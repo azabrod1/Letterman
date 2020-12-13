@@ -1,0 +1,42 @@
+
+/* Class = "UISegmentedControl"; 3Rq-VK-f8P.segmentTitles[0] = "Normal"; ObjectID = "3Rq-VK-f8P"; */
+"3Rq-VK-f8P.segmentTitles[0]" = "Normal";
+
+/* Class = "UISegmentedControl"; 3Rq-VK-f8P.segmentTitles[1] = "Brutal"; ObjectID = "3Rq-VK-f8P"; */
+"3Rq-VK-f8P.segmentTitles[1]" = "Brutal";
+
+/* Class = "UILabel"; text = "Won under 8: "; ObjectID = "7Me-2t-89e"; */
+"7Me-2t-89e.text" = "Won under 8: ";
+
+/* Class = "UILabel"; text = "Options"; ObjectID = "8U3-iy-mZE"; */
+"8U3-iy-mZE.text" = "Options";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "A3Y-0U-eBg"; */
+"A3Y-0U-eBg.normalTitle" = "Reset";
+
+/* Class = "UILabel"; text = "Word difficulty*"; ObjectID = "Ell-fG-Psu"; */
+"Ell-fG-Psu.text" = "Word difficulty*";
+
+/* Class = "UILabel"; text = "*The change only affects  next game "; ObjectID = "Jr4-1c-CKx"; */
+"Jr4-1c-CKx.text" = "*The change only affects  next game ";
+
+/* Class = "UIButton"; normalTitle = "Cancel & Close"; ObjectID = "K9k-HK-XKU"; */
+"K9k-HK-XKU.normalTitle" = "Cancel & Close";
+
+/* Class = "UILabel"; text = "Silent Mode"; ObjectID = "KWJ-Ea-Qvq"; */
+"KWJ-Ea-Qvq.text" = "Silent Mode";
+
+/* Class = "UILabel"; text = "Game statistics"; ObjectID = "MSj-vr-kk9"; */
+"MSj-vr-kk9.text" = "Game statistics";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "V86-Ty-9rJ"; */
+"V86-Ty-9rJ.normalTitle" = "Back";
+
+/* Class = "UITextView"; text = "WELCOME!  This game is an arcade variation of the ancient \"code-breaking\" game BULLS & COWS, also known as Mastermind, Jotto, or simply Word. While the rules are simple, the game is surprisingly entertaining and can be quite challenging. Be prepared to devise advanced strategies and freshen up your vocabulary!\n\nHOW TO PLAY:  You have ten attempts to guess a secret word. Type up to five letters and you will be given a two-number clue, such as 3/4. This means that you guessed the correct 4 letters (COWS), three of them being in the right position (BULLS). All the secret words consist of five unique letters, however you are welcome to use repeated letters in your guesses.  \n\nFOR EXAMPLE,  if the secret word is ROBIN, the guess BORIN will result in a clue 3/5 (all letters are matching the secret word, three are in the right position); the guess ABBKA will result in a clue 1/2 (two letters, albeit identical, are matching the secret word, one is in the right position) and so on.\n\n© 2016 Organized Chaos"; ObjectID = "W9Z-vR-kDP"; */
+"W9Z-vR-kDP.text" = "WELCOME!  This game is an arcade variation of the ancient \"code-breaking\" game BULLS & COWS, also known as Mastermind, Jotto, or simply Word. While the rules are simple, the game is surprisingly entertaining and can be quite challenging. Be prepared to devise advanced strategies and freshen up your vocabulary!\n\nHOW TO PLAY:  You have ten attempts to guess a secret word. Type up to five letters and you will be given a two-number clue, such as 3/4. This means that you guessed the correct 4 letters (COWS), three of them being in the right position (BULLS). All the secret words consist of five unique letters, however you are welcome to use repeated letters in your guesses.  \n\nFOR EXAMPLE,  if the secret word is ROBIN, the guess BORIN will result in a clue 3/5 (all letters are matching the secret word, three are in the right position); the guess ABBKA will result in a clue 1/2 (two letters, albeit identical, are matching the secret word, one is in the right position) and so on.\n\n© 2016 Organized Chaos";
+
+/* Class = "UILabel"; text = "Games won: "; ObjectID = "sKz-U6-Ppc"; */
+"sKz-U6-Ppc.text" = "Games won: ";
+
+/* Class = "UIButton"; normalTitle = "Save & Close"; ObjectID = "xxa-Nv-i5M"; */
+"xxa-Nv-i5M.normalTitle" = "Save & Close";
