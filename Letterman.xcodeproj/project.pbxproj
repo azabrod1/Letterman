@@ -191,7 +191,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 1220;
-				ORGANIZATIONNAME = "Alex and Greg Zabrodskiy";
+				ORGANIZATIONNAME = "Organized Chaos";
 				TargetAttributes = {
 					49E35C6C1D3A84DC003114BE = {
 						CreatedOnToolsVersion = 7.3.1;
