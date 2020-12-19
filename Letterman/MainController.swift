@@ -141,7 +141,8 @@ class MainController: UIViewController, UITextFieldDelegate {
             
         }
         
-        frameHeight -= imageHeader.frame.height
+        
+        frameHeight -= imageHeader.frame.maxY//imageHeader.frame.height
         frameHeight -= toolBar.frame.height
         
         if (frameWidth > frameHeight){
@@ -217,7 +218,8 @@ class MainController: UIViewController, UITextFieldDelegate {
                 char.adjustsFontSizeToFitWidth = true
                 char.minimumFontSize = 18 //___ 8
                 //char.autocapitalizationType = .AllCharacters
-                
+                char.autocorrectionType = .no
+
                 char.textAlignment = .center
                 char.autocapitalizationType = UITextAutocapitalizationType.allCharacters
                 

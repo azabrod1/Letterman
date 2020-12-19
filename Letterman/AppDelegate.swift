@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Letterman
 //
-//  Created by Tatyana kudryavtseva on 16/07/16.
 //  Copyright © 2016 Alex Zabrodskiy. All rights reserved.
 //
 

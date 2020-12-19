@@ -127,7 +127,7 @@ class OptionsViewController: UIViewController {
         viewOptions.layer.cornerRadius = 0.1 * viewOptions.bounds.size.height
         
         
-        self.view.sendSubviewToBack(imageBackground)
+        //self.view.sendSubviewToBack(imageBackground)
         
         
         

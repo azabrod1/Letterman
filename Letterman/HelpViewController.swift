@@ -21,14 +21,14 @@ class HelpViewController: UIViewController {
         buttonClose.backgroundColor = UIColor.red
         buttonClose.setTitleColor(UIColor.white, for: UIControl.State.normal)
         buttonClose.layer.cornerRadius = 0.5 * buttonClose.bounds.size.height
-        textView.layer.cornerRadius = 0.1 * textView.bounds.size.width
+        textView.layer.cornerRadius = 0.01 * textView.bounds.size.width
         
         //buttonClose.center = self.view.center
         
         // Do any additional setup after loading the view.
         
         self.view.bringSubviewToFront(buttonClose)
-        self.view.bringSubviewToFront(viewHeader)
+        //self.view.bringSubviewToFront(viewHeader)
         self.view.bringSubviewToFront(textView)
         
         textView.scrollRangeToVisible(NSMakeRange(0, 0))

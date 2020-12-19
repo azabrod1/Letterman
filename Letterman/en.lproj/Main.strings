@@ -21,7 +21,7 @@
 "Jr4-1c-CKx.text" = "*The change only affects  next game ";
 
 /* Class = "UIButton"; normalTitle = "Cancel & Close"; ObjectID = "K9k-HK-XKU"; */
-"K9k-HK-XKU.normalTitle" = "Cancel & Close";
+"K9k-HK-XKU.normalTitle" = "Cancel";
 
 /* Class = "UILabel"; text = "Silent Mode"; ObjectID = "KWJ-Ea-Qvq"; */
 "KWJ-Ea-Qvq.text" = "Silent Mode";
@@ -39,4 +39,4 @@
 "sKz-U6-Ppc.text" = "Games won: ";
 
 /* Class = "UIButton"; normalTitle = "Save & Close"; ObjectID = "xxa-Nv-i5M"; */
-"xxa-Nv-i5M.normalTitle" = "Save & Close";
+"xxa-Nv-i5M.normalTitle" = "Save";
