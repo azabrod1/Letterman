@@ -2,7 +2,6 @@
 //  LMTextField.swift
 //  Letterman
 //
-//  Created by Tatyana kudryavtseva on 26/08/16.
 //  Copyright © 2016 Alex Zabrodskiy. All rights reserved.
 //
 
@@ -14,10 +13,6 @@ class LMTextField: UITextField {
     
     override func deleteBackward() {
         super.deleteBackward()
-        
         myDelegate.handleBackspace(tag: self.tag)
-        
     }
-    
-
 }

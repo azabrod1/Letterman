@@ -2,7 +2,6 @@
 //  HelpViewController.swift
 //  Letterman
 //
-//  Created by Tatyana kudryavtseva on 19/07/16.
 //  Copyright © 2016 Alex Zabrodskiy. All rights reserved.
 //
 
@@ -12,16 +11,16 @@ class HelpViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var buttonClose: UIButton!
-    @IBOutlet weak var viewHeader: UIImageView!
+    //@IBOutlet weak var viewHeader: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttonClose.backgroundColor = UIColor.red
+        buttonClose.backgroundColor = UIColor.systemBlue
         buttonClose.setTitleColor(UIColor.white, for: UIControl.State.normal)
-        buttonClose.layer.cornerRadius = 0.5 * buttonClose.bounds.size.height
-        textView.layer.cornerRadius = 0.01 * textView.bounds.size.width
+        buttonClose.layer.cornerRadius = 10 //0.5 * buttonClose.bounds.size.height
+        textView.layer.cornerRadius = 0.05 * textView.bounds.size.width
         
         //buttonClose.center = self.view.center
         
@@ -48,9 +47,21 @@ class HelpViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         
-        MainController.playSound(name:"click", ext: "mp3")
+        UIView.animate(withDuration: 0.2,
+            animations: {
+                sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    sender.transform = CGAffineTransform.identity
+                    // actual code
+                    MainController.playSound(name:"click", ext: "mp3")
+                    self.dismiss(animated:true, completion: {});
+
+                    // end of actual code
+                }
+            })
         
-        self.dismiss(animated:true, completion: {});
         
     }
 

@@ -2,7 +2,6 @@
 //  ViewController.swift
 //  Letterman
 //
-//  Created by Tatyana kudryavtseva on 16/07/16.
 //  Copyright © 2016 Alex Zabrodskiy. All rights reserved.
 //
 
@@ -16,7 +15,7 @@ class MainController: UIViewController, UITextFieldDelegate {
     // MARK: constants
     
     var round = 0
-    static var player: AVAudioPlayer?
+    static var player: AVAudioPlayer!
     
     static let defaults = UserDefaults.standard
     
@@ -35,9 +34,10 @@ class MainController: UIViewController, UITextFieldDelegate {
     var board: LMBoard = LMBoard()!
     var buttonGo = UIButton()
     
-    @IBOutlet weak var imageHeader: UIImageView!
+    //@IBOutlet weak var imageHeader: UIImageView!
     @IBOutlet weak var toolBar: UIToolbar!
-
+    
+    @IBOutlet weak var lblCaption: UILabel!
     // MARK: init
     
     required init?(coder aDecoder: NSCoder) {super.init(coder: aDecoder)}
@@ -133,16 +133,15 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         // to deal with a weird issue when iPad launches in landscape
         if (frameWidth > frameHeight){
-            
-            let temp = frameWidth
-            frameWidth = frameHeight
-            frameHeight = temp
-            
-            
+            //let temp = frameWidth
+            //frameWidth = frameHeight
+            //frameHeight = temp
+            swap(&frameHeight, &frameWidth)
         }
         
         
-        frameHeight -= imageHeader.frame.maxY//imageHeader.frame.height
+        //frameHeight -= imageHeader.frame.maxY//imageHeader.frame.height
+        frameHeight -= lblCaption.frame.height
         frameHeight -= toolBar.frame.height
         
         if (frameWidth > frameHeight){
@@ -151,18 +150,18 @@ class MainController: UIViewController, UITextFieldDelegate {
             //frameWidth = frameHeight
             //frameHeight = temp
         }
-        
-        
-        
+         
         let textSize = min(0.1 * frameWidth, (frameHeight  ) * 0.075)
         
         let xDistance = 0.010 * frameWidth
         let yDistance = 0.014 * frameHeight
         
-        let xStart = 0.5 * frameWidth - 3.5 * textSize - 2 * xDistance
+        //let fh = lblCaption.frame.height
+        //print(fh, frameHeight)
         
-        let yStart = imageHeader.frame.height + 1 * yDistance
-                
+        let xStart = 0.5 * frameWidth - 3.5 * textSize - 2 * xDistance
+        let yStart = /*lblCaption.frame.height*/ frameHeight * 0.2 + 1 * yDistance
+        
         
         round = board.getTotalTries()
         
@@ -185,7 +184,9 @@ class MainController: UIViewController, UITextFieldDelegate {
                     char.borderStyle = UITextField.BorderStyle.none
                     char.backgroundColor = UIColor.clear
                     char.textColor = numberColor
-                    char.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
+                    
+                    char.font = UIFont(name: "Chalkduster", size: 25)
+                    //char.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
                     char.textAlignment = .justified
                     char.isUserInteractionEnabled = false
 
@@ -195,7 +196,8 @@ class MainController: UIViewController, UITextFieldDelegate {
                     char.borderStyle = UITextField.BorderStyle.none
                     char.backgroundColor = UIColor.clear
                     char.textColor = numberColor
-                    char.font = UIFont(name: "Optima-ExtraBlack", size: 18)
+                    char.font = UIFont(name: "Chalkduster", size: 18)!
+                        //UIFont(name: "Optima-ExtraBlack", size: 18)
                     char.textAlignment = .left
                     char.isUserInteractionEnabled = false
                 }
@@ -207,7 +209,8 @@ class MainController: UIViewController, UITextFieldDelegate {
                     char.textColor = letterNormalColor
                     char.layer.borderColor = colorPlate[0].cgColor
                     
-                    char.font = UIFont(name: "Optima-ExtraBlack", size: 18)
+                    char.font = UIFont(name: "Chalkduster", size: 18)!
+                        //UIFont(name: "Optima-ExtraBlack", size: 18)
                     
                     char.layer.cornerRadius = 0.35 * char.bounds.size.width
                     char.textAlignment = .center
@@ -241,12 +244,12 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         buttonGo = UIButton (frame: CGRect(x: x, y: y, width: textSize, height: textSize))
         
-        buttonGo.setTitle("Go", for: UIControl.State.normal)
-        buttonGo.backgroundColor = UIColor.red
+        buttonGo.setTitle("GO", for: UIControl.State.normal)
+        buttonGo.backgroundColor = UIColor.systemBlue
         buttonGo.setTitleColor(UIColor.white, for: UIControl.State.normal)
         buttonGo.layer.cornerRadius = 0.5 * buttonGo.bounds.size.width
         buttonGo.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        //buttonGo font = UIFont(name: "Optima-ExtraBlack", size: 18)!
+        buttonGo.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)!
         self.view.addSubview(buttonGo)
         
         // tag the first row (for firstresponder pass)
@@ -255,7 +258,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         }
         // make sure elements are visible
         
-        self.view.bringSubviewToFront(imageHeader)
+        self.view.bringSubviewToFront(lblCaption)
         self.view.bringSubviewToFront(toolBar)
     }
     
@@ -268,8 +271,8 @@ class MainController: UIViewController, UITextFieldDelegate {
         //labelStatus.backgroundColor = UIColor(patternImage: UIImage(named: "Logo.png")!)
         //labelStatus.text = "Letterman: Let's Play!"
         
-        imageHeader.image = UIImage(named: "Logo")
-        
+        //imageHeader.image = UIImage(named: "Logo")
+        lblCaption.text = "Letterman"
         //print(imageHeader.image)
         
         grid[0][0].isHidden = false
@@ -327,8 +330,8 @@ class MainController: UIViewController, UITextFieldDelegate {
                 (grid[0][c]).isUserInteractionEnabled = false
             }
 
-            imageHeader.image = UIImage(named: "Victory")
-            
+            //imageHeader.image = UIImage(named: "Victory")
+            lblCaption.text = "Victory"
             buttonGo.isHidden = true
             
             
@@ -338,16 +341,11 @@ class MainController: UIViewController, UITextFieldDelegate {
             
             if(board.getTries() < 8){
                 //print("under 8")
-                
                 var result = MainController.defaults.integer(forKey: "Under8")
                 result += 1
                 MainController.defaults.set(result, forKey: "Under8")
-                
             }
-            
-
-            
-        }
+         }
             
         else if(board.isOver()){
             
@@ -386,8 +384,8 @@ class MainController: UIViewController, UITextFieldDelegate {
             }
 
             
-            imageHeader.image = UIImage(named: "Defeat")
-            
+            //imageHeader.image = UIImage(named: "Defeat")
+            lblCaption.text = "Defeat"
             buttonGo.isHidden = true
             grid[0][0].text = "x"
             
@@ -430,14 +428,9 @@ class MainController: UIViewController, UITextFieldDelegate {
                 (grid[r+1][6]).text = "\(np)/\(nc)"
                 
             }
-
-            
-        }
+       }
         grid[0][1].becomeFirstResponder()
-        
-      
-
-    }
+     }
     
     
     // add a new word
@@ -537,10 +530,7 @@ class MainController: UIViewController, UITextFieldDelegate {
                 (grid[0][textField.tag+1]).becomeFirstResponder()
             
                 (grid[0][textField.tag+1]).selectedTextRange = (grid[0][textField.tag+1]).textRange(from: (grid[0][textField.tag+1]).beginningOfDocument, to: (grid[0][textField.tag+1]).beginningOfDocument)
-            
-            
                 //.setContentOffset(CGPointZero, animated: false)
-            
             }
         } else {
             
@@ -548,28 +538,16 @@ class MainController: UIViewController, UITextFieldDelegate {
             
             textField.text = ""
             
-            
             if (textField.tag > 0){
                 (grid[0][textField.tag-1]).becomeFirstResponder()
                 
                 (grid[0][textField.tag-1]).selectedTextRange = (grid[0][textField.tag-1]).textRange(from:(grid[0][textField.tag-1]).beginningOfDocument, to: (grid[0][textField.tag-1]).beginningOfDocument)
-                
                 if (wasEmpty){
                     (grid[0][textField.tag-1]).text = ""
                 }
-                
-                
             }
-            
-            
-            
         }
-        
-        
-        
         textField.resignFirstResponder()
-        
-        
         return false
     }
     
@@ -603,7 +581,19 @@ class MainController: UIViewController, UITextFieldDelegate {
  
     
     @objc func buttonPressed( sender: UIButton){
-        addWord()
+        
+        UIView.animate(withDuration: 0.2,
+            animations: {
+                sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    sender.transform = CGAffineTransform.identity
+                    // actual code
+                    self.addWord()
+                    // end of actual code
+                }
+            })
     }
     
     
@@ -611,49 +601,70 @@ class MainController: UIViewController, UITextFieldDelegate {
 
     
     @objc func startButtonPressed(_ sender: UIBarButtonItem) {
-        MainController.playSound(name: "click", ext: "mp3")
-        resetBoard()
+        
+        UIView.animate(withDuration: 0.2,
+            animations: {
+                self.toolBar.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    MainController.playSound(name: "click", ext: "mp3")
+                    self.resetBoard()
+                    
+                    self.toolBar.transform = CGAffineTransform.identity
+                }
+            })
     }
     
     @objc func optionButtonPressed(_ sender: UIBarButtonItem){
-        MainController.playSound(name: "click", ext: "mp3")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController( withIdentifier: "OptionsViewController")
+ 
+        UIView.animate(withDuration: 0.2,
+            animations: {
+                self.toolBar.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    MainController.playSound(name: "click", ext: "mp3")
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController( withIdentifier: "OptionsViewController")
+                    
+                    //let optionsVC = OptionsViewController
+                    //instantiateFromStoryboard(self.storyboard!)
+                    self.present(vc, animated: true, completion: nil)
+                    
+                    self.toolBar.transform = CGAffineTransform.identity
+                }
+            })
         
-        //let optionsVC = OptionsViewController
-        //instantiateFromStoryboard(self.storyboard!)
-        self.present(vc, animated: true, completion: nil)
+        
     }
     
     
     @objc func helpButtonPressed(_ sender: UIBarButtonItem){
-        
-        MainController.playSound(name: "click", ext: "mp3")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "HelpViewController")
-        
-        
-        //let optionsVC = OptionsViewController
-        //instantiateFromStoryboard(self.storyboard!)
-        
-        
-        self.present(vc, animated: true, completion: nil)
+
+        UIView.animate(withDuration: 0.2,
+            animations: {
+                self.toolBar.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    MainController.playSound(name: "click", ext: "mp3")
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "HelpViewController")
+                    //let optionsVC = OptionsViewController
+                    //instantiateFromStoryboard(self.storyboard!)
+                    self.present(vc, animated: true, completion: nil)
+                    
+                    self.toolBar.transform = CGAffineTransform.identity
+                }
+            })
+
     }
     
-    
-    
-    
     // MARK: cosmetics
-    
-
-    
     static func playSound( name : String, ext : String) {
         
-        
-        if (defaults.bool(forKey: "SilentMode")){
-            return
-        }
-        
+        if (defaults.bool(forKey: "SilentMode")){return}
         
         let url :URL = Bundle.main.url(forResource: name, withExtension:ext)!
         
@@ -663,9 +674,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             
             player.prepareToPlay()
             player.play()
-        } catch let error as NSError {
-            print("sound error : \(error.description)")
-        }
+        } catch let error as NSError {print("sound error : \(error.description)")}
     }
     
     

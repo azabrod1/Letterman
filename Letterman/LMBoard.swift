@@ -2,7 +2,6 @@
 //  LMBoard.swift
 //  Letterman
 //
-//  Created by Tatyana kudryavtseva on 16/07/16.
 //  Copyright © 2016 Alex Zabrodskiy. All rights reserved.
 //
 
@@ -21,8 +20,6 @@ class LMBoard {
     private var totalTries = 10
     
     private var wordDifficulty : Int
-    
-    
    
     
     required init?()
@@ -52,9 +49,7 @@ class LMBoard {
             count -= 1
             
             chars = chars.sort()
-            
-            
-            
+  
             for i in 0..<count {
                 if (chars[i] == chars[i+1]) {
                     print ("Bad word: \(word)")
@@ -65,9 +60,6 @@ class LMBoard {
         */
         
     }
-    
-    
-    
     
 
     func resetGame() {
@@ -81,35 +73,19 @@ class LMBoard {
         // update tries
         tries = 0
         matchFound = false
-        
-        
-        
     }
     
     func chooseSecretWord() {
         
-        
         let currentWordDifficulty = defaults.integer(forKey: "WordDifficulty")
         
         if (currentWordDifficulty != wordDifficulty){
-            
             wordDifficulty = currentWordDifficulty
             loadSecretWords()
-            
         }
-        
-        
-    
         //srand(UInt32(time(nil)))
-        
-        
-        
         let random = Int(arc4random_uniform(UInt32(allSecretWords.count)))
-    
-        
         secretWord = allSecretWords[random]
-        
-    
     }
     
     
@@ -120,42 +96,29 @@ class LMBoard {
         
         let (mp, mc) = findMatches(word: word)
         
-        if (mp == 5 && mc == 5){
-            matchFound = true
-        }
-        
+        if (mp == 5 && mc == 5) {matchFound = true}
         return (mp, mc)
-        
-        
     }
     
     
     
     func findMatches(word : String) -> (Int, Int)
-    
     {
-    
         let wordCharacters = Array(word)
         
         let secretCharacters = Array (secretWord)
-        
         
         var mc : Int = 0
         var mp : Int = 0
         
         for i in 0...4{
-            
             for j in 0...4{
-                
                 if (wordCharacters[i]==secretCharacters[j]){
                     mc+=1
-                    if (i == j){
-                        mp+=1
-                    }
+                    if (i == j) {mp+=1}
                 }
             }
         }
-        
         return (mp,mc)
     }
     
@@ -164,31 +127,15 @@ class LMBoard {
     
     func isOver() -> Bool {return matchFound || tries >= totalTries}
     
-    func getGuessedWords() -> [String]{
-        return guessedWords
-    }
+    func getGuessedWords() -> [String] {return guessedWords}
     
-    func getSecredWord() -> String {
-        return secretWord
-    }
+    func getSecredWord() -> String {return secretWord}
     
-    func getTotalTries() -> Int {
-        return totalTries
-    }
+    func getTotalTries() -> Int {return totalTries}
     
-    func setTotalTries(total : Int){
-        totalTries = total
-    }
-  
+    func setTotalTries(total : Int) {totalTries = total}
     
-    func getTries() -> Int{
-        
-        //print("tries: \(guessedWords.count)")
-        
-        return guessedWords.count
-        
-        
-    }
+    func getTries() -> Int {return guessedWords.count}
     
     
     func loadSecretWords() {
@@ -203,7 +150,6 @@ class LMBoard {
         }
         let text : String
     
-    
         do{
             text = try String(contentsOfFile: fileLocation)
         }
@@ -211,15 +157,7 @@ class LMBoard {
             text = ""
             return
         }
-    
-    
-    
         allSecretWords = text.components(separatedBy: "\n")
-    
         return
-    
-    
     }
-    
-    
 }
