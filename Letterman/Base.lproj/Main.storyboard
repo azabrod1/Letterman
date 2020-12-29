@@ -188,22 +188,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="qvz-DT-sp8">
-                                        <rect key="frame" x="20.333333333333329" y="38.666666666666679" width="229.33333333333337" height="104.33333333333331"/>
+                                        <rect key="frame" x="24.666666666666671" y="38.666666666666679" width="220.66666666666663" height="104.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="G0b-nZ-eyZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="229.33333333333334" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="smv-gg-yLc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="229.33333333333334" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="36"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-fG-Psu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="36"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-fG-Psu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="36"/>
                                                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Rq-VK-f8P">
-                                                                <rect key="frame" x="102.33333333333331" y="0.0" width="127" height="37"/>
+                                                                <rect key="frame" x="93.666666666666686" y="0.0" width="127" height="37"/>
                                                                 <color key="backgroundColor" red="0.65885130949470583" green="0.7458846035437483" blue="0.88893527770653746" alpha="0.43184267241379309" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <segments>
                                                                     <segment title="Normal"/>
@@ -215,7 +215,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Only affects  next game " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr4-1c-CKx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr4-1c-CKx">
                                                 <rect key="frame" x="0.0" y="43" width="178.33333333333334" height="14.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14.5" id="nvJ-gE-Cqz"/>
@@ -338,7 +338,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="369" id="Crt-Ow-bGY"/>
                                     <constraint firstAttribute="height" constant="194" id="vyQ-TA-S0Y"/>
                                 </constraints>
-                                <mutableString key="text">WELCOME TO LETTERMAN!  
+                                <string key="text">WELCOME TO LETTERMAN!  
 This game is an arcade variation of the ancient "code-breaking" game JOTTO, also known as MASTERMIND, BULLS &amp; COWS, or simply WORD. While the rules are simple, the game is surprisingly entertaining and can be quite challenging. Be prepared to devise advanced strategies and freshen up your vocabulary!
 
 HOW TO PLAY:  You have ten attempts to guess a secret word, consisting of 5 unique letters. Type up to five letters and you will be given a two-number clue, such as 3/4. This means that you guessed the correct 4 letters, three of them being in the right position. Your guesses can include repeated letters or even blanks.  
@@ -346,7 +346,7 @@ HOW TO PLAY:  You have ten attempts to guess a secret word, consisting of 5 un
 FOR EXAMPLE,  if the secret word is ROBIN, the guess BORIN will result in a clue 3/5 (all letters are matching the secret word, three are in the right position); the guess ABBKA will result in a clue 1/2 (two letters, albeit identical, are matching the secret word, one is in the right position) and so on.
 
 Good luck! 
-© 2020 Organized Chaos (Alex and Gregory Zabrodskiy)</mutableString>
+© 2020 Organized Chaos (Alex and Gregory Zabrodskiy)</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
